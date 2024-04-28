@@ -120,8 +120,26 @@ input::placeholder {
     font-size: 14px; 
 }
 
+.service-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding:1rem;
+}
+
 .service-package {
+    background-color: #39424E;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
     margin-bottom: 20px;
+}
+
+.service-package h3 {
+    color: #66FCF1;
+}
+
+.service-package p {
+    color: #C5C6C7;
 }
 
 /* Form styles */

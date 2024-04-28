@@ -2,17 +2,15 @@ let slideIndex = 0;
 showSlides();
 
 function showSlides() {
-  let i;
-  const slides = document.querySelector('.slideshow-container');
-  const slidesArray = slides.children;
-  for (i = 0; i < slidesArray.length; i++) {
-    slidesArray[i].style.display = 'none';
+  const slides = document.querySelectorAll('.mySlides');
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = 'none';
   }
   slideIndex++;
-  if (slideIndex > slidesArray.length) {
+  if (slideIndex > slides.length) {
     slideIndex = 1;
   }
-  slidesArray[slideIndex - 1].style.display = 'block';
+  slides[slideIndex - 1].style.display = 'block';
   setTimeout(showSlides, 10000); // Change image every 10 seconds
 }
 

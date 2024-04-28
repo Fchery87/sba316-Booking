@@ -1,20 +1,124 @@
+/* General styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #212A31; /* Updated background color */
+    color: #d3d9d4; /* Updated text color */
 }
 
-header {
-    background-color: #333;
+/* Navigation menu styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo {
+    margin-right: auto; /* Pushes the logo to the left */
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Displaying the menu items in a row */
+}
+
+.menu li {
+    margin-right: 15px;
+}
+
+.menu li a {
     color: #fff;
-    padding: 20px;
-    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
 }
 
+
+
+
+.menu li a {
+    color: #fff; /* Reverted menu link color */
+    text-decoration: none;
+}
+
+.menu li a:hover {
+    color: #55e852; /* Reverted menu link hover color */
+}
+
+/* Slideshow styles */
+.slideshow-container {
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.mySlides {
+    display: none;
+}
+
+img {
+    width: 20%;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: #fff; /* Reverted arrow color */
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0 3px 3px 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* Main content styles */
 main {
     padding: 20px;
 }
 
+.section {
+    margin-bottom: 40px;
+}
+
+/* Heading styles */
+h2 {
+    text-align: center; /* Center align the text */
+    margin-bottom: 20px; /* Add some space below the heading */
+    position: relative; /* Enable relative positioning for pseudo elements */
+}
+
+h2::before {
+    content: ''; /* Add content to the pseudo element */
+    position: absolute; /* Position it absolutely */
+    bottom: -5px; /* Push it down slightly */
+    left: 50%; /* Align it to the center */
+    width: 50px; /* Set its width */
+    height: 2px; /* Set its height */
+    background-color: #55e852; /* Set the color */
+    transform: translateX(-50%); /* Center it horizontally */
+}
+
+
+.service-package {
+    margin-bottom: 20px;
+}
+
+/* Form styles */
 form {
     max-width: 400px;
     margin: 0 auto;
@@ -40,13 +144,14 @@ button {
 }
 
 button {
-    background-color: #333;
-    color: #fff;
+    background-color: #124e66; /* Updated button background color */
+    color: #d3d9d4; /* Updated button text color */
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #555;
+    background-color: #748d92; /* Updated button hover background color */
+    color: #212A31; /* Updated button hover text color */
 }
 
 #message {

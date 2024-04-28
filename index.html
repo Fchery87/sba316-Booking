@@ -5,30 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <script src="./index.js" defer></script>
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Credit Mayhem</title>
 </head>
 <body>
     <header>
-        <h1>Welcome to Our Credit Service</h1>
+        <nav>
+            <div class="logo">
+                <img src="./images/White logo - no background.png" alt="Logo">
+            </div>
+            <ul class="menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="./images/buildings.jpg" style="width: 100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="./images/reports.jpg" style="width: 100%">
+        </div>
+        <!-- Add more slides here -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
     <main>
-        <form id="creditForm">
-            <div>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+        <section id="about" class="section">
+            <h2>About Us</h2>
+            <p>Welcome to Credit Mayhem, your trusted partner in credit repair and financial wellness. At Credit Mayhem, we understand the challenges that individuals face when dealing with credit issues. Whether you're struggling with low credit scores, errors on your credit report, or simply want to improve your financial health, we're here to help.</p>
+            <p>Our team of experienced professionals is dedicated to providing personalized solutions tailored to your unique situation. We offer a range of services, including credit analysis, dispute resolution, and credit education, designed to empower you to take control of your financial future.</p>
+            <p>With Credit Mayhem, you can expect transparent and ethical practices, prompt and efficient service, and a commitment to achieving real results. Let us guide you on the path to better credit and financial freedom.</p>
+            <p>Contact us today to schedule a consultation and take the first step towards a brighter financial future with Credit Mayhem.</p>
+        </section>
+        <section id="services" class="section">
+            <h2>Our Services</h2>
+            <div class="service-package">
+                <h3>Credit Analysis and Consultation</h3>
+                <p>Our comprehensive credit analysis includes a thorough review of your credit report and financial situation. We'll identify areas for improvement and provide personalized recommendations to help you achieve your credit goals.</p>
             </div>
-            <div>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+            <div class="service-package">
+                <h3>Credit Dispute Resolution</h3>
+                <p>We'll work on your behalf to dispute inaccuracies, errors, and questionable items on your credit report. Our experienced team will navigate the dispute process with credit bureaus and creditors to ensure fair and accurate reporting.</p>
             </div>
-            <div>
-                <label for="creditLimit">Credit Limit:</label>
-                <input type="number" id="creditLimit" name="creditLimit" required>
+            <div class="service-package">
+                <h3>Credit Education and Coaching</h3>
+                <p>Empower yourself with knowledge and skills to manage your credit effectively. Our credit education resources and personalized coaching sessions will equip you with the tools and strategies needed to maintain healthy credit habits for the long term.</p>
             </div>
-            <button type="submit">Apply Now</button>
-        </form>
-        <div id="message"></div>
+        </section>
+        <section id="contact" class="section">
+            <h2>Contact Us</h2>
+            <form id="creditForm" action="#contact" method="post">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="creditLimit">Current Credit Score:</label>
+                    <input type="number" id="creditLimit" name="creditLimit" required>
+                </div>
+                <button type="submit">Apply Now</button>
+            </form>
+            <div id="message"></div>
+        </section>
     </main>
 </body>
-
 </html>

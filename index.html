@@ -60,15 +60,15 @@
             <form id="creditForm" action="#contact" method="post">
                 <div>
                     <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name:" required>
                 </div>
                 <div>
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address:" required>
                 </div>
                 <div>
                     <label for="creditLimit">Current Credit Score:</label>
-                    <input type="number" id="creditLimit" name="creditLimit" required>
+                    <input type="number" id="creditLimit" name="creditLimit" required min="300" max="850" step="1" placeholder="Enter a number between 300 and 850">
                 </div>
                 <button type="submit">Apply Now</button>
             </form>

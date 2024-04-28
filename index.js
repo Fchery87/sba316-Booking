@@ -3,15 +3,16 @@ showSlides();
 
 function showSlides() {
   let i;
-  const slides = document.getElementsByClassName('mySlides');
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = 'none';
+  const slides = document.querySelector('.slideshow-container');
+  const slidesArray = slides.children;
+  for (i = 0; i < slidesArray.length; i++) {
+    slidesArray[i].style.display = 'none';
   }
   slideIndex++;
-  if (slideIndex > slides.length) {
+  if (slideIndex > slidesArray.length) {
     slideIndex = 1;
   }
-  slides[slideIndex - 1].style.display = 'block';
+  slidesArray[slideIndex - 1].style.display = 'block';
   setTimeout(showSlides, 10000); // Change image every 10 seconds
 }
 
@@ -20,28 +21,32 @@ function plusSlides(n) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+  // Cache elements
   const creditForm = document.getElementById('creditForm');
   const messageDiv = document.getElementById('message');
+  const emailInput = document.getElementById('email');
 
+  // Event listener for email input validation
+  emailInput.addEventListener('input', function (event) {
+    const email = event.target.value;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      event.target.setCustomValidity('Please enter a valid email address.');
+    } else {
+      event.target.setCustomValidity('');
+    }
+  });
+
+  // Event listener for form submission
   creditForm.addEventListener('submit', function (event) {
     event.preventDefault();
 
+    // Retrieve form input values
     const name = document.getElementById('name').value;
-    const emailInput = document.getElementById('email');
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    emailInput.addEventListener('input', function (event) {
-      const email = event.target.value;
-      if (!emailRegex.test(email)) {
-        event.target.setCustomValidity('Please enter a valid email address.');
-      } else {
-        event.target.setCustomValidity('');
-      }
-    });
     const creditLimit = document.getElementById('creditLimit').value;
 
     // Validation
-    if (!name || !email || !creditLimit) {
+    if (!name || !emailInput.value || !creditLimit) {
       showMessage('Please fill in all fields.', 'error');
       return;
     }
@@ -56,6 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
     creditForm.reset();
   });
 
+  // Function to display message
   function showMessage(message, type) {
     messageDiv.textContent = message;
     messageDiv.className = type;

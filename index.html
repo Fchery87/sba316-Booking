@@ -86,8 +86,9 @@
                     <input type="date" id="consultationDate" name="consultationDate" required>
                 </div>
                 <div>
-                    <label for="consultationTime">Consultation Time:</label>
-                    <input type="time" id="consultationTime" name="consultationTime" required>
+                    <label for="consultationTime">Consultation appointments are available from 9 am to 5 pm.</label>
+                    <input type="time" id="appointmentTime" name="appointmentTime" min="09:00" max="17:00" required>
+
                 </div>
                 <button type="submit">Apply Now</button>
             </form>
